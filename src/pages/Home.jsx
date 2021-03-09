@@ -1,5 +1,5 @@
 import api from "api";
-import { Card, Main } from "components";
+import { Card, Main, Search } from "components";
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -18,8 +18,13 @@ const Home = () => {
     []
   );
 
+  function handleSearch(event) {
+    event.preventDefault();
+  }
+
   return (
     <Main>
+      <Search handler={handleSearch} label="Search Movie Titles" />
       <div className="grid grid-cols-5 gap-8">
         {movies.map(
           ({

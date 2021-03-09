@@ -1,3 +1,4 @@
+import { Btn } from "components/base";
 import PropTypes from "prop-types";
 
 const Card = ({ title, imgSrc, date, rating, id }) => {
@@ -19,9 +20,7 @@ const Card = ({ title, imgSrc, date, rating, id }) => {
         </figcaption>
       </figure>
       {/* TODO: Use `<Link to={`/{id}`}/> */}
-      <button className="transition duration-500 ease-in-out bg-green-700 hover:bg-green-500 transform text-white rounded p-2 hover:-translate-y-1 hover:scale-110">
-        More Info!
-      </button>
+      <Btn txt="🎥 More Info" />
     </section>
   );
 };
