@@ -20,24 +20,26 @@ const Home = () => {
 
   return (
     <Main>
-      {movies.map(
-        ({
-          title,
-          id,
-          poster_path: poster,
-          vote_average: rating,
-          release_date: date,
-        }) => (
-          <Card
-            key={id}
-            title={title}
-            id={id}
-            imgSrc={poster}
-            rating={rating}
-            date={date}
-          />
-        )
-      )}
+      <div className="grid grid-cols-5 gap-8">
+        {movies.map(
+          ({
+            title,
+            id,
+            poster_path: poster,
+            vote_average: rating,
+            release_date: date,
+          }) => (
+            <Card
+              key={id}
+              title={title}
+              id={id}
+              imgSrc={poster}
+              rating={rating}
+              date={date}
+            />
+          )
+        )}
+      </div>
     </Main>
   );
 };

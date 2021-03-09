@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
  * It means that one component is just used to receive any/all React components.
  */
 function Main({ children }) {
-  return <main>{children}</main>;
+  return <main className="container mx-auto">{children}</main>;
 }
 
 Main.propTypes = {
