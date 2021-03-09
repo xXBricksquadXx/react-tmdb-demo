@@ -4,9 +4,9 @@ import { Film, Home } from "./pages";
 function App() {
   return (
     <Router>
-      {/* TODO: Set up the Route and Switch such that Home is rendered '/' and 'Film' is rendered when we go to '/Film' */}
       <Switch>
-        <Route path="/film">
+        {/* Dynamic route/path */}
+        <Route path="/:id">
           <Film />
         </Route>
         <Route path="/">
