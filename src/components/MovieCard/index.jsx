@@ -12,9 +12,8 @@ const Card = ({ title, imgSrc, date, rating, id }) => {
           className="rounded"
         />
         <figcaption>
-          {/* TODO: Format the date! */}
           <p>
-            <span className="italic">Release Date:</span> {date}
+            <span className="italic">Released:</span> {date}
           </p>
           <p>{rating}</p>
         </figcaption>
