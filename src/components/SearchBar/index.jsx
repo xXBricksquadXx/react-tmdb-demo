@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const SearchBar = ({ handler, label }) => {
   return (
-    <form className="flex gap-2 justify-center p-2 mb-4">
+    <form className="flex gap-2 justify-center p-2 mb-4" onSubmit={handler}>
       <label htmlFor="search" className="sr-only">
         {label}
       </label>

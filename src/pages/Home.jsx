@@ -18,8 +18,12 @@ const Home = () => {
     []
   );
 
-  function handleSearch(event) {
+  async function handleSearch(event) {
     event.preventDefault();
+    const { results } = await api.index("/search/movie", {
+      query: event.target.elements[0].value,
+    });
+    setMovies(() => results);
   }
 
   return (
