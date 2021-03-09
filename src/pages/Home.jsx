@@ -1,5 +1,5 @@
 import api from "api";
-import { Main } from "components";
+import { Card, Main } from "components";
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -20,7 +20,24 @@ const Home = () => {
 
   return (
     <Main>
-      <p>Hello World</p>
+      {movies.map(
+        ({
+          title,
+          id,
+          poster_path: poster,
+          vote_average: rating,
+          release_date: date,
+        }) => (
+          <Card
+            key={id}
+            title={title}
+            id={id}
+            imgSrc={poster}
+            rating={rating}
+            date={date}
+          />
+        )
+      )}
     </Main>
   );
 };
