@@ -1,20 +1,7 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Film, Home } from "./pages";
+import { Home } from "./pages";
 
 function App() {
-  return (
-    <Router>
-      <Switch>
-        {/* Dynamic route/path */}
-        <Route path="/:id">
-          <Film />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
-  );
+  return <Home />;
 }
 
 export default App;
