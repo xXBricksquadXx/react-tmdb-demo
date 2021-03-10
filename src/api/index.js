@@ -19,8 +19,10 @@ const api = {
   },
 
   show(id, path = "") {
+    const noSlashId = id[0] === "/" ? id.slice(1) : id;
+
     return ky
-      .get(`${baseUrl}/movie${id}${path}`, {
+      .get(`${baseUrl}/movie/${noSlashId}${path}`, {
         searchParams: baseParams,
       })
       .json();

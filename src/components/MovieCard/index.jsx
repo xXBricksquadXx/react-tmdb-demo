@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 
 const Card = ({ title, imgSrc, date, rating, id }) => {
   return (
-    <section className="border-2 border-black-600 p-4 rounded shadow-sm flex flex-col gap-4 text-center">
+    <section
+      className="border-2 border-black-600 p-4 rounded shadow-sm flex flex-col gap-4 text-center"
+      data-id={id}
+    >
       <h2 className="font-black line-clamp-1">{title}</h2>
       <figure>
         <img

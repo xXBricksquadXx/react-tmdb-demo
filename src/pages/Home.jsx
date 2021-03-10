@@ -28,8 +28,9 @@ const Home = () => {
     setMovies(() => results);
   }
 
-  function handleMoreInfo(event) {
-    console.log("hello");
+  async function handleMoreInfo({ target }) {
+    const movieData = await api.show(target.closest("section").dataset.id);
+    setActiveMovie(() => movieData);
   }
 
   return (
