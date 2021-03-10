@@ -1,6 +1,5 @@
 import { Btn } from "components/base";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 const Card = ({ title, imgSrc, date, rating, id }) => {
   return (
@@ -19,9 +18,7 @@ const Card = ({ title, imgSrc, date, rating, id }) => {
           <p>{rating}</p>
         </figcaption>
       </figure>
-      <Link to={`/${id}`}>
-        <Btn txt="🎥 More Info" />
-      </Link>
+      <Btn txt="🎥 More Info" />
     </section>
   );
 };

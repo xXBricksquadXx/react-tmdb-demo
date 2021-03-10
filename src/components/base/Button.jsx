@@ -1,7 +1,10 @@
+import { HandlerContext } from "context";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useContext } from "react";
 
-const Button = ({ txt, handler }) => {
+const Button = ({ txt }) => {
+  const handler = useContext(HandlerContext);
+
   return (
     <button
       className="transition duration-500 ease-in-out bg-green-700 hover:bg-green-500 transform text-white rounded p-2 hover:-translate-y-1 hover:scale-110"
@@ -13,12 +16,10 @@ const Button = ({ txt, handler }) => {
 };
 
 Button.propTypes = {
-  handler: PropTypes.func,
   txt: PropTypes.string,
 };
 
 Button.defaultProps = {
-  handler: () => {},
   txt: "Submit",
 };
 
