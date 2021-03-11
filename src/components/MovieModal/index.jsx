@@ -10,7 +10,7 @@ import {
 import PropTypes from "prop-types";
 
 function MovieModal({ title, overview, handler }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { onClose } = useDisclosure();
 
   return (
     <Modal isOpen={Boolean(title)} onClose={onClose}>
@@ -27,11 +27,12 @@ function MovieModal({ title, overview, handler }) {
 MovieModal.propTypes = {
   handler: PropTypes.func.isRequired,
   overview: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 MovieModal.defaultProps = {
   overview: "No overview provided",
+  title: "",
 };
 
 export default MovieModal;
