@@ -22,10 +22,15 @@ const Home = () => {
 
   async function handleSearch(event) {
     event.preventDefault();
-    const { results } = await api.index("/search/movie", {
-      query: event.target.elements[0].value,
-    });
-    setMovies(() => results);
+
+    const searchTerm = event.target.elements[0].value;
+
+    if (searchTerm) {
+      const { results } = await api.index("/search/movie", {
+        query: searchTerm,
+      });
+      setMovies(() => results);
+    }
   }
 
   async function handleMoreInfo({ target }) {
