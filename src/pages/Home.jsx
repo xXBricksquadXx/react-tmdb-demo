@@ -33,6 +33,10 @@ const Home = () => {
     setActiveMovie(() => movieData);
   }
 
+  function handleClose() {
+    setActiveMovie(() => ({}));
+  }
+
   return (
     <Main>
       <Search handler={handleSearch} label="Search Movie Titles" />
@@ -62,7 +66,11 @@ const Home = () => {
         )}
       </div>
 
-      <Modal title={activeMovie.title} overview={activeMovie.overview} />
+      <Modal
+        title={activeMovie.title}
+        overview={activeMovie.overview}
+        handler={handleClose}
+      />
     </Main>
   );
 };

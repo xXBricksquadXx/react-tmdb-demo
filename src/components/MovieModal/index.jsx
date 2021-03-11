@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 
-function MovieModal({ title, overview }) {
+function MovieModal({ title, overview, handler }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -17,7 +17,7 @@ function MovieModal({ title, overview }) {
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{title}</ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton onClick={handler} />
         <ModalBody>{overview}</ModalBody>
       </ModalContent>
     </Modal>
@@ -25,8 +25,9 @@ function MovieModal({ title, overview }) {
 }
 
 MovieModal.propTypes = {
-  title: PropTypes.string.isRequired,
+  handler: PropTypes.func.isRequired,
   overview: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
 MovieModal.defaultProps = {
