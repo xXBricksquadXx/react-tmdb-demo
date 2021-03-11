@@ -2,6 +2,7 @@ import api from "api";
 import { Card, Main, Modal, Search } from "components";
 import { HandlerContext } from "context";
 import { useEffect, useState } from "react";
+import {useQuery} from 'react-query'
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -19,6 +20,14 @@ const Home = () => {
     // Empty dep array means on initial render
     []
   );
+
+  async function fetchMovies() {
+    const { results } = await api.index();
+    return results
+
+  }
+
+  const {data} = useQuery("movies", fetchMovies);
 
   async function handleSearch(event) {
     event.preventDefault();
