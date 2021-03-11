@@ -13,7 +13,7 @@ function MovieModal({ title, overview }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={Boolean(title)} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{title}</ModalHeader>

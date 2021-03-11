@@ -1,5 +1,5 @@
 import api from "api";
-import { Card, Main, Search } from "components";
+import { Card, Main, Modal, Search } from "components";
 import { HandlerContext } from "context";
 import { useEffect, useState } from "react";
 
@@ -61,6 +61,8 @@ const Home = () => {
           )
         )}
       </div>
+
+      <Modal title={activeMovie.title} overview={activeMovie.overview} />
     </Main>
   );
 };
